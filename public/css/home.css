@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
+
+.navbar {
+    background: #0f4c5c;
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #ffd166;
+}
+
+.hero {
+    padding: 90px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+    color: #0f4c5c;
+}
+
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 14px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-right: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #0f4c5c;
+    color: white;
+}
+
+.btn-secondary {
+    background: #ffd166;
+    color: #222;
+}
+
+.hero-image-box {
+    width:600px;
+    height: 360px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+    animation: imageFloat 5s ease-in-out infinite;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes imageFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-16px);
+    }
+}
+
+
+.section {
+    padding: 70px 60px;
+    background: white;
+}
+
+.section h2 {
+    text-align: center;
+    color: #0f4c5c;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.feature-box {
+    background: #f4f7fb;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #0f4c5c;
+}
+
+.feature-box h3 {
+    color: #0f4c5c;
+    margin-top: 0;
+}
+
+.footer {
+    background: #0f4c5c;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+@media (max-width: 768px) {
+    .navbar,
+    .hero {
+        flex-direction: column;
+        padding: 25px;
+        text-align: center;
+    }
+
+    .navbar a {
+        margin: 10px;
+        display: inline-block;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-image-box {
+        width: 100%;
+        max-width: 600px;
+        height: 360px;
+        margin: 0 auto;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}

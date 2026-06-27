@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
+
+.navbar {
+    background: #0f4c5c;
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #ffd166;
+}
+
+.about-hero {
+    padding: 100px 60px;
+    background: linear-gradient(135deg, #e8f3f6, #ffffff);
+    text-align: center;
+}
+
+.about-text {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.tag {
+    background: #ffd166;
+    color: #222;
+    padding: 9px 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 18px;
+}
+
+.about-text h1 {
+    font-size: 50px;
+    color: #0f4c5c;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.about-actions {
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 14px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin: 8px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #0f4c5c;
+    color: white;
+}
+
+.btn-secondary {
+    background: #ffd166;
+    color: #222;
+}
+
+.mission-section {
+    padding: 70px 60px;
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.mission-card {
+    background: #f4f7fb;
+    padding: 35px;
+    border-radius: 12px;
+    border-left: 6px solid #0f4c5c;
+}
+
+.mission-card h2 {
+    color: #0f4c5c;
+    margin-top: 0;
+}
+
+.mission-card p {
+    color: #555;
+    line-height: 1.7;
+}
+
+.system-section {
+    padding: 70px 60px;
+}
+
+.system-section h2 {
+    text-align: center;
+    color: #0f4c5c;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.system-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.system-box {
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #ffd166;
+}
+
+.system-box h3 {
+    color: #0f4c5c;
+    margin-top: 0;
+}
+
+.system-box p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.footer {
+    background: #0f4c5c;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 25px;
+        text-align: center;
+    }
+
+    .navbar a {
+        margin: 10px;
+        display: inline-block;
+    }
+
+    .about-hero {
+        padding: 70px 25px;
+    }
+
+    .about-text h1 {
+        font-size: 34px;
+    }
+
+    .mission-section,
+    .system-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-section,
+    .system-section {
+        padding: 45px 25px;
+    }
+}

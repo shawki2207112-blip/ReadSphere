@@ -1,0 +1,272 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
+
+.navbar {
+    background: #0f4c5c;
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #ffd166;
+}
+
+.contact-hero {
+    padding: 95px 60px;
+    text-align: center;
+    background: linear-gradient(135deg, #e8f3f6, #ffffff);
+}
+
+.tag {
+    background: #ffd166;
+    color: #222;
+    padding: 9px 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 18px;
+}
+
+.contact-hero h1 {
+    max-width: 850px;
+    margin: 0 auto 20px;
+    font-size: 48px;
+    color: #0f4c5c;
+}
+
+.contact-hero p {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.contact-section {
+    padding: 70px 60px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+.contact-card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #ffd166;
+    transition: 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.12);
+}
+
+.main-card {
+    background: #0f4c5c;
+    color: white;
+    border-top: none;
+}
+
+.contact-card h2,
+.contact-card h3 {
+    margin-top: 0;
+    color: #0f4c5c;
+}
+
+.main-card h2,
+.main-card h3 {
+    color: white;
+}
+
+.contact-card p {
+    color: #555;
+    line-height: 1.7;
+}
+
+.main-card p {
+    color: #e8f3f6;
+}
+
+.icon-box {
+    width: 52px;
+    height: 52px;
+    background: #e8f3f6;
+    color: #0f4c5c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.support-hours {
+    margin-top: 25px;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.support-hours p {
+    margin-bottom: 8px;
+}
+
+.support-hours strong {
+    color: #ffd166;
+    font-size: 20px;
+}
+
+.help-section {
+    padding: 70px 60px;
+    background: white;
+}
+
+.help-section h2 {
+    text-align: center;
+    color: #0f4c5c;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.help-box {
+    background: #f4f7fb;
+    padding: 28px;
+    border-radius: 12px;
+    border-left: 6px solid #0f4c5c;
+}
+
+.help-box h3 {
+    color: #0f4c5c;
+    margin-top: 0;
+}
+
+.help-box p {
+    color: #555;
+    line-height: 1.7;
+}
+
+.notice-section {
+    padding: 70px 60px;
+}
+
+.notice-box {
+    background: linear-gradient(135deg, #0f4c5c, #093743);
+    color: white;
+    padding: 50px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.notice-box h2 {
+    font-size: 36px;
+    margin-top: 0;
+}
+
+.notice-box p {
+    max-width: 720px;
+    margin: 0 auto 28px;
+    color: #e8f3f6;
+    line-height: 1.8;
+}
+
+.btn {
+    background: #ffd166;
+    color: #222;
+    padding: 14px 24px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #f5bd3d;
+}
+
+.footer {
+    background: #0f4c5c;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+@media (max-width: 992px) {
+    .contact-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 25px;
+        text-align: center;
+    }
+
+    .navbar a {
+        margin: 10px;
+        display: inline-block;
+    }
+
+    .contact-hero {
+        padding: 70px 25px;
+    }
+
+    .contact-hero h1 {
+        font-size: 34px;
+    }
+
+    .contact-section,
+    .help-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-card {
+        grid-column: span 1;
+    }
+
+    .contact-section,
+    .help-section,
+    .notice-section {
+        padding: 45px 25px;
+    }
+
+    .notice-box {
+        padding: 35px 25px;
+    }
+
+    .notice-box h2 {
+        font-size: 30px;
+    }
+}
