@@ -6,32 +6,31 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('author');
-            
-
             $table->string('isbn')->unique();
 
             $table->foreignId('category_id')
-              ->constrained('categories')
-              ->onDelete('cascade');
+                ->constrained()
+                ->restrictOnDelete();
 
-            $table->integer('total_copies');
-            $table->integer('available_copies');
+            $table->unsignedInteger('total_copies');
+            $table->unsignedInteger('available_copies');
+
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->index([
+                'category_id',
+                'available_copies',
+            ]);
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('books');

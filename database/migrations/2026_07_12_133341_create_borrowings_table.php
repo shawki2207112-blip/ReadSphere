@@ -6,34 +6,41 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('borrowings', function (Blueprint $table) {
             $table->id();
+
             $table->foreignId('user_id')
-              ->constrained('users')
-              ->onDelete('cascade');
+                ->constrained()
+                ->restrictOnDelete();
 
             $table->foreignId('book_id')
-              ->constrained('books')
-              ->onDelete('cascade');
+                ->constrained()
+                ->restrictOnDelete();
 
             $table->date('issue_date');
+            $table->date('due_date');
+            $table->date('returned_at')->nullable();
 
-            $table->date('return_date')
-              ->nullable();
+            $table->string('status')
+                ->default('borrowed')
+                ->index();
 
-            $table->string('status');
             $table->timestamps();
+
+            $table->index([
+                'user_id',
+                'status',
+            ]);
+
+            $table->index([
+                'book_id',
+                'status',
+            ]);
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('borrowings');
