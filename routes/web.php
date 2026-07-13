@@ -1,16 +1,44 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home.index');
+/*
+ Public Routes
+*/
+
+Route::view('/', 'home.index')->name('home');
+
+Route::view('/about', 'home.about')->name('about');
+
+Route::view('/contact', 'home.contact')->name('contact');
+
+
+/*
+ Guest Authentication Routes
+*/
+
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLogin'])
+        ->name('login');
+
+    Route::post('/login', [AuthController::class, 'login'])
+        ->name('login.submit');
+
+    Route::get('/register', [AuthController::class, 'showRegister'])
+        ->name('register');
+
+    Route::post('/register', [AuthController::class, 'register'])
+        ->name('register.submit');
 });
-Route::get('/about', function () {
-    return view('home.about');
-});
-Route::get('/contact', function () {
-    return view('home.contact');
-});
-Route::get('/login', function () {
-    return view('home.login');
-});
+
+
+/*
+ Logout Route
+*/
+
+Route::post('/logout', [AuthController::class, 'logout'])
+    ->middleware('auth')
+    ->name('logout');
+
