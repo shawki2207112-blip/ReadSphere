@@ -183,3 +183,28 @@ body {
         padding: 45px 25px;
     }
 }
+/* Shared public navigation refinements */
+.site-header {
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar a[aria-current="page"] {
+    color: #ffd166;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        justify-content: center;
+    }
+}
