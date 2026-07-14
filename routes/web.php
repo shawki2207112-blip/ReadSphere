@@ -1,12 +1,13 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
  Public Routes
-*/
+ */
+
 
 Route::view('/', 'home.index')->name('home');
 
@@ -16,7 +17,8 @@ Route::view('/contact', 'home.contact')->name('contact');
 
 
 /*
- Guest Authentication Routes
+Guest Authentication Routes
+Only users who are not logged in can access these routes.
 */
 
 Route::middleware('guest')->group(function () {
@@ -35,10 +37,44 @@ Route::middleware('guest')->group(function () {
 
 
 /*
- Logout Route
+ Authenticated Routes
 */
 
-Route::post('/logout', [AuthController::class, 'logout'])
-    ->middleware('auth')
-    ->name('logout');
+Route::middleware('auth')->group(function () {
+    /*
+     * Redirect the user to the correct dashboard based on their role.
+     */
+    Route::get('/dashboard', function () {
+        return auth()->user()->isAdmin()
+            ? redirect()->route('admin.dashboard')
+            : redirect()->route('member.dashboard');
+    })->name('dashboard');
 
+    /*
+     * Admin dashboard route.
+     */
+    Route::middleware('role:admin')
+        ->prefix('admin')
+        ->name('admin.')
+        ->group(function () {
+            Route::get('/dashboard', [DashboardController::class, 'admin'])
+                ->name('dashboard');
+        });
+
+    /*
+     * Member dashboard route.
+     */
+    Route::middleware('role:member')
+        ->prefix('member')
+        ->name('member.')
+        ->group(function () {
+            Route::get('/dashboard', [DashboardController::class, 'member'])
+                ->name('dashboard');
+        });
+
+    /*
+     * Logout route.
+     */
+    Route::post('/logout', [AuthController::class, 'logout'])
+        ->name('logout');
+});
