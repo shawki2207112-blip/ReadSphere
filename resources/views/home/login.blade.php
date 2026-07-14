@@ -3,68 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Library Management System</title>
+
+    <title>Login - ReadSphere</title>
 
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body>
+    @include('partials.public-navbar')
 
-    <nav class="navbar">
-        <div class="logo">Library Management</div>
-
-        <div>
-            <a href="{{ url('/') }}">Home</a>
-            <a href="{{ url('/about') }}">About</a>
-            <a href="{{ url('/contact') }}">Contact</a>
-            <a href="{{ url('/login') }}">Login</a>
-            <a href="{{ url('/register') }}">Register</a>
-        </div>
-    </nav>
-
-    <section class="login-section">
-        <div class="login-content">
-    <span class="tag">Welcome Back</span>
-    <h1>Login to your library account</h1>
-    <p>
-        Access your dashboard to manage library activity, check books,
-        view borrowing records, and continue your library work smoothly.
-    </p>
-
-    <div class="login-image-box">
-        <img src="{{ asset('images/library-hero.png') }}" alt="Library Management" class="login-image">
-    </div>
-</div>
-        </div>
-
-        <div class="login-card">
-            <h2>Login</h2>
-
-            <form action="#" method="POST">
-                @csrf
-
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                </div>
-
-                <button type="submit" class="login-btn">Login</button>
-
-                <p class="register-text">
-                    Do not have an account?
-                    <a href="{{ url('/register') }}">Register here</a>
+    <main>
+        <section class="login-section" aria-labelledby="login-page-heading">
+            <div class="login-content">
+                <span class="tag">Welcome Back</span>
+                <h1 id="login-page-heading">Login to your library account</h1>
+                <p>
+                    Access your dashboard to manage library activity, search books,
+                    and review borrowing records.
                 </p>
-            </form>
-        </div>
-    </section>
+
+                <figure class="login-image-box">
+                    <img
+                        src="{{ asset('images/library-hero.png') }}"
+                        alt="Books inside a library"
+                        class="login-image"
+                    >
+                </figure>
+            </div>
+
+            <section class="login-card" aria-labelledby="login-form-heading">
+                <h2 id="login-form-heading">Login</h2>
+
+                @include('partials.flash')
+
+                <form action="{{ route('login.submit') }}" method="POST">
+                    @csrf
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value="{{ old('email') }}"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                            autofocus
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <label class="remember-row" for="remember">
+                        <input type="checkbox" id="remember" name="remember" value="1">
+                        <span>Remember me</span>
+                    </label>
+
+                    <button type="submit" class="login-btn">Login</button>
+
+                    <p class="register-text">
+                        Do not have an account?
+                        <a href="{{ route('register') }}">Register here</a>
+                    </p>
+                </form>
+
+                <aside class="demo-box" aria-label="Demo login accounts">
+                    <strong>Demo accounts after seeding</strong>
+                    <span>Admin: admin@library.com / admin123</span>
+                    <span>Member: member@library.com / member123</span>
+                </aside>
+            </section>
+        </section>
+    </main>
 
     <footer class="footer">
-        <p>&copy; {{ date('Y') }} Library Management System. All rights reserved.</p>
+        <p>&copy; {{ date('Y') }} ReadSphere Library Management System.</p>
     </footer>
-
 </body>
 </html>
