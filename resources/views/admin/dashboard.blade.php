@@ -78,8 +78,9 @@
                     >
                         Issue Book
                     </a>
+                    --}}
                 </nav>
-                --}}
+                
 
                 {{-- Latest library borrowing records. --}}
                 <section class="panel" aria-labelledby="recent-borrowings-heading">
