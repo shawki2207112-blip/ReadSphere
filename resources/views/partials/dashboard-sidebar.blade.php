@@ -30,9 +30,7 @@
             >
                 Dashboard
             </a>
-            {{--
-            
-           
+                  
             <a
                 class="{{ request()->routeIs('admin.categories.*') ? 'active' : '' }}"
                 href="{{ route('admin.categories.index') }}"
@@ -40,9 +38,6 @@
             >
                 Manage Categories
             </a>
-                --}}
-                
-        
 
             <a
                 class="{{ request()->routeIs('admin.books.*') ? 'active' : '' }}"

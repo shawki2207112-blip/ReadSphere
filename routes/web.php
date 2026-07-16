@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\BookController as AdminBookController;;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
@@ -62,6 +63,8 @@ Route::middleware('auth')->group(function () {
                 ->name('dashboard');
                 // Admin book-management routes.
             Route::resource('books', AdminBookController::class);
+            // Add category-management route
+            Route::resource('categories', AdminCategoryController::class)->except('show');
         });
 
     /*
