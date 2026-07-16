@@ -30,7 +30,9 @@
             >
                 Dashboard
             </a>
-
+            {{--
+            
+           
             <a
                 class="{{ request()->routeIs('admin.categories.*') ? 'active' : '' }}"
                 href="{{ route('admin.categories.index') }}"
@@ -94,6 +96,7 @@
             >
                 Reports
             </a>
+             --}}
         @else
             <a
                 class="{{ request()->routeIs('member.dashboard') ? 'active' : '' }}"
@@ -102,7 +105,7 @@
             >
                 Dashboard
             </a>
-
+            {{--
             <a
                 class="{{ request()->routeIs('member.books.index') ? 'active' : '' }}"
                 href="{{ route('member.books.index') }}"
@@ -134,6 +137,7 @@
             >
                 Profile
             </a>
+            --}}
         @endif
     </nav>
 

@@ -3,36 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {{-- CSRF token for secure JavaScript or AJAX requests. --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Admin Dashboard - ReadSphere</title>
 
-    {{-- Load the shared dashboard stylesheet. --}}
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 </head>
 
 <body>
     <div class="app-shell">
-
-        {{-- Reusable dashboard sidebar. --}}
+        {{-- Shared dashboard sidebar. --}}
         @include('partials.dashboard-sidebar')
 
         <main class="main-content" id="main-content">
-
-            {{-- Dashboard title and subtitle. --}}
             @include('partials.dashboard-topbar', [
                 'pageTitle' => 'Admin Dashboard',
                 'pageSubtitle' => 'Overview of books, members, inventory, and borrowing activity.',
             ])
 
             <section class="content-area" aria-label="Admin Dashboard">
-
-                {{-- Display success, error, and validation messages. --}}
                 @include('partials.flash')
 
-                {{-- Summary cards for the main library statistics. --}}
+                {{-- Main library statistics. --}}
                 <section class="stats-grid" aria-label="Library summary">
                     <article class="stat-card">
                         <span>Book Titles</span>
@@ -65,31 +57,43 @@
                     </article>
                 </section>
 
-                {{-- Shortcuts to common admin actions. --}}
+                {{--
+                    These links will be restored after their routes
+                    and controller methods are created.
+
                 <nav class="quick-actions" aria-label="Quick actions">
                     <a class="button" href="{{ route('admin.books.create') }}">
                         Add Book
                     </a>
 
-                    <a class="button secondary" href="{{ route('admin.members.create') }}">
+                    <a
+                        class="button secondary"
+                        href="{{ route('admin.members.create') }}"
+                    >
                         Add Member
                     </a>
 
-                    <a class="button secondary" href="{{ route('admin.borrowings.create') }}">
+                    <a
+                        class="button secondary"
+                        href="{{ route('admin.borrowings.create') }}"
+                    >
                         Issue Book
                     </a>
                 </nav>
+                --}}
 
-                {{-- Show the latest borrowing records. --}}
+                {{-- Latest library borrowing records. --}}
                 <section class="panel" aria-labelledby="recent-borrowings-heading">
                     <div class="panel-heading">
                         <h2 id="recent-borrowings-heading">
                             Recent Borrowing Activity
                         </h2>
 
+                        {{--
                         <a href="{{ route('admin.borrowings.history') }}">
                             View all
                         </a>
+                        --}}
                     </div>
 
                     <div class="table-wrap">
@@ -113,10 +117,19 @@
                                     <tr>
                                         <td>{{ $borrowing->user->name }}</td>
                                         <td>{{ $borrowing->book->title }}</td>
-                                        <td>{{ $borrowing->issue_date->format('d M Y') }}</td>
-                                        <td>{{ $borrowing->due_date->format('d M Y') }}</td>
+
                                         <td>
-                                            <x-status-badge :status="$borrowing->status" />
+                                            {{ $borrowing->issue_date->format('d M Y') }}
+                                        </td>
+
+                                        <td>
+                                            {{ $borrowing->due_date->format('d M Y') }}
+                                        </td>
+
+                                        <td>
+                                            <x-status-badge
+                                                :status="$borrowing->status"
+                                            />
                                         </td>
                                     </tr>
                                 @empty
@@ -134,7 +147,6 @@
         </main>
     </div>
 
-    {{-- Load shared dashboard JavaScript. --}}
     <script src="{{ asset('js/dashboard.js') }}"></script>
 </body>
 </html>
