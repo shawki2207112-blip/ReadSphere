@@ -8,3 +8,6 @@ Route::get('/books', [BookApiController::class, 'index']);
 
 // Return the details of one selected book.
 Route::get('/books/{book}', [BookApiController::class, 'show']);
+
+// Return all book categories with their book counts.
+Route::get('/categories', [CategoryApiController::class, 'index']);
