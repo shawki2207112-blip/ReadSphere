@@ -63,7 +63,6 @@
                     <a class="button" href="{{ route('admin.books.create') }}">
                         Add Book
                     </a>
-                    {{--
 
                     <a
                         class="button secondary"
@@ -71,8 +70,7 @@
                     >
                         Add Member
                     </a>
-                    --}}
-
+       
                     <a
                         class="button secondary"
                         href="{{ route('admin.borrowings.create') }}"

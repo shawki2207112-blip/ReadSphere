@@ -46,8 +46,7 @@
             >
                 Manage Books
             </a>
-            {{--
-
+            
             <a
                 class="{{ request()->routeIs('admin.members.*') ? 'active' : '' }}"
                 href="{{ route('admin.members.index') }}"
@@ -55,7 +54,7 @@
             >
                 Manage Members
             </a>
-            --}}
+           
 
             <a
                 class="{{ request()->routeIs('admin.borrowings.create') ? 'active' : '' }}"

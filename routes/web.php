@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\BorrowingController as AdminBorrowingController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\BookController as AdminBookController;;
+use App\Http\Controllers\Admin\MemberController as AdminMemberController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -68,6 +69,8 @@ Route::middleware('auth')->group(function () {
              Route::get('/inventory', [AdminBookController::class, 'inventory'])->name('inventory');
             // Add category-management route
             Route::resource('categories', AdminCategoryController::class)->except('show');
+            //Member managing routes
+            Route::resource('members', AdminMemberController::class);
             
             // Display the form for issuing a book to a member.
             Route::get('/borrowings/issue', [AdminBorrowingController::class, 'create'])->name('borrowings.create');
