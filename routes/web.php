@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BorrowingController as AdminBorrowingController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\BookController as AdminBookController;;
 use App\Http\Controllers\Admin\MemberController as AdminMemberController;
+use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -82,7 +83,10 @@ Route::middleware('auth')->group(function () {
             Route::patch('/borrowings/{borrowing}/return', [AdminBorrowingController::class, 'returnBook'])->name('borrowings.return');
             // Display all active and completed borrowing records.
             Route::get('/borrowings/history', [AdminBorrowingController::class, 'history'])->name('borrowings.history');
-        });
+            //Report route
+            Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
+            
+            });
 
     /*
      * Member dashboard route.

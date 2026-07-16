@@ -46,7 +46,7 @@
             >
                 Manage Books
             </a>
-            
+
             <a
                 class="{{ request()->routeIs('admin.members.*') ? 'active' : '' }}"
                 href="{{ route('admin.members.index') }}"
@@ -88,7 +88,7 @@
             >
                 Inventory Status
             </a>
-            {{--
+            
             <a
                 class="{{ request()->routeIs('admin.reports.*') ? 'active' : '' }}"
                 href="{{ route('admin.reports.index') }}"
@@ -96,7 +96,7 @@
             >
                 Reports
             </a>
-             --}}
+             
         @else
             <a
                 class="{{ request()->routeIs('member.dashboard') ? 'active' : '' }}"
