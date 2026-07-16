@@ -90,11 +90,10 @@
                             Recent Borrowing Activity
                         </h2>
 
-                        {{--
                         <a href="{{ route('admin.borrowings.history') }}">
                             View all
                         </a>
-                        --}}
+                        
                     </div>
 
                     <div class="table-wrap">

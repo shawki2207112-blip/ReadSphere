@@ -80,7 +80,7 @@
             >
                 Borrowing History
             </a>
-            {{--
+          
 
             <a
                 class="{{ request()->routeIs('admin.inventory') ? 'active' : '' }}"
@@ -89,7 +89,7 @@
             >
                 Inventory Status
             </a>
-
+            {{--
             <a
                 class="{{ request()->routeIs('admin.reports.*') ? 'active' : '' }}"
                 href="{{ route('admin.reports.index') }}"

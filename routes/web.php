@@ -64,6 +64,8 @@ Route::middleware('auth')->group(function () {
                 ->name('dashboard');
                 // Admin book-management routes.
             Route::resource('books', AdminBookController::class);
+            //Inventory Routes
+             Route::get('/inventory', [AdminBookController::class, 'inventory'])->name('inventory');
             // Add category-management route
             Route::resource('categories', AdminCategoryController::class)->except('show');
             
