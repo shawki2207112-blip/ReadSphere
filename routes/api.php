@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\BookApiController;
+use App\Http\Controllers\Api\CategoryApiController;
 use Illuminate\Support\Facades\Route;
 
 // Return all books with optional search and filtering.
