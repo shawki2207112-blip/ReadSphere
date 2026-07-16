@@ -77,11 +77,6 @@
                     </p>
                 </form>
 
-                <aside class="demo-box" aria-label="Demo login accounts">
-                    <strong>Demo accounts after seeding</strong>
-                    <span>Admin: admin@library.com / admin123</span>
-                    <span>Member: member@library.com / member123</span>
-                </aside>
             </section>
         </section>
     </main>
