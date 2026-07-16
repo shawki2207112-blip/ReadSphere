@@ -71,6 +71,7 @@
                     >
                         Add Member
                     </a>
+                    --}}
 
                     <a
                         class="button secondary"
@@ -78,7 +79,7 @@
                     >
                         Issue Book
                     </a>
-                    --}}
+                    
                 </nav>
                 
 

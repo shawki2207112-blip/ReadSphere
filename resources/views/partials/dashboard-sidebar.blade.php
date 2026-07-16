@@ -55,6 +55,7 @@
             >
                 Manage Members
             </a>
+            --}}
 
             <a
                 class="{{ request()->routeIs('admin.borrowings.create') ? 'active' : '' }}"
@@ -79,6 +80,7 @@
             >
                 Borrowing History
             </a>
+            {{--
 
             <a
                 class="{{ request()->routeIs('admin.inventory') ? 'active' : '' }}"

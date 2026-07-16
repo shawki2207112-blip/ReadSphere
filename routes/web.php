@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BorrowingController as AdminBorrowingController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\BookController as AdminBookController;;
 use App\Http\Controllers\AuthController;
@@ -65,6 +66,17 @@ Route::middleware('auth')->group(function () {
             Route::resource('books', AdminBookController::class);
             // Add category-management route
             Route::resource('categories', AdminCategoryController::class)->except('show');
+            
+            // Display the form for issuing a book to a member.
+            Route::get('/borrowings/issue', [AdminBorrowingController::class, 'create'])->name('borrowings.create');
+            // Validate and save a new borrowing record.
+            Route::post('/borrowings/issue', [AdminBorrowingController::class, 'store'])->name('borrowings.store');
+            // Display active borrowing records and return options.
+            Route::get('/borrowings/active', [AdminBorrowingController::class, 'active'])->name('borrowings.active');
+            // Mark a selected borrowing record as returned.
+            Route::patch('/borrowings/{borrowing}/return', [AdminBorrowingController::class, 'returnBook'])->name('borrowings.return');
+            // Display all active and completed borrowing records.
+            Route::get('/borrowings/history', [AdminBorrowingController::class, 'history'])->name('borrowings.history');
         });
 
     /*
