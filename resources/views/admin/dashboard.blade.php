@@ -57,14 +57,13 @@
                     </article>
                 </section>
 
-                {{--
-                    These links will be restored after their routes
-                    and controller methods are created.
+                
 
                 <nav class="quick-actions" aria-label="Quick actions">
                     <a class="button" href="{{ route('admin.books.create') }}">
                         Add Book
                     </a>
+                    {{--
 
                     <a
                         class="button secondary"

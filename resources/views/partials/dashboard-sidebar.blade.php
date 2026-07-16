@@ -40,6 +40,9 @@
             >
                 Manage Categories
             </a>
+                --}}
+                
+        
 
             <a
                 class="{{ request()->routeIs('admin.books.*') ? 'active' : '' }}"
@@ -48,6 +51,7 @@
             >
                 Manage Books
             </a>
+            {{--
 
             <a
                 class="{{ request()->routeIs('admin.members.*') ? 'active' : '' }}"
