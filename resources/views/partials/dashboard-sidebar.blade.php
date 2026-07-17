@@ -105,7 +105,7 @@
             >
                 Dashboard
             </a>
-            {{--
+            
             <a
                 class="{{ request()->routeIs('member.books.index') ? 'active' : '' }}"
                 href="{{ route('member.books.index') }}"
@@ -113,6 +113,7 @@
             >
                 Search Books
             </a>
+            {{--
 
             <a
                 class="{{ request()->routeIs('member.borrowings.current') ? 'active' : '' }}"

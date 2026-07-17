@@ -50,9 +50,6 @@
                     </article>
                 </section>
 
-                {{--
-                    These links will be restored after their routes
-                    and controller methods are created.
 
                 <nav class="quick-actions" aria-label="Member quick actions">
                     <a
@@ -61,6 +58,7 @@
                     >
                         Search Catalogue
                     </a>
+                    {{--
 
                     <a
                         class="button secondary"

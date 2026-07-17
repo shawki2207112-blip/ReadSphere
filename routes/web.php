@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\MemberController as AdminMemberController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Member\BookController as MemberBookController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -97,6 +98,8 @@ Route::middleware('auth')->group(function () {
         ->group(function () {
             Route::get('/dashboard', [DashboardController::class, 'member'])
                 ->name('dashboard');
+            // Book search Route
+            Route::get('/books/search', [MemberBookController::class, 'index'])->name('books.index');
         });
 
     /*
