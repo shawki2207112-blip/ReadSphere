@@ -58,7 +58,7 @@
                     >
                         Search Catalogue
                     </a>
-                    {{--
+                    
 
                     <a
                         class="button secondary"
@@ -66,8 +66,9 @@
                     >
                         My Borrowed Books
                     </a>
+                    
                 </nav>
-                --}}
+                
 
                 {{-- Member's currently borrowed books. --}}
                 <section class="panel" aria-labelledby="current-borrowings-heading">

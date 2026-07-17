@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Member\BookController as MemberBookController;
+use App\Http\Controllers\Member\BorrowingController as MemberBorrowingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -100,7 +101,12 @@ Route::middleware('auth')->group(function () {
                 ->name('dashboard');
             // Book search Route
             Route::get('/books/search', [MemberBookController::class, 'index'])->name('books.index');
-        });
+            //Current Borrowed Book Route
+            Route::get('/borrowed-books', [MemberBorrowingController::class, 'current'])->name('borrowings.current');
+            //Borrowing History Route
+            Route::get('/borrow-history', [MemberBorrowingController::class, 'history'])->name('borrowings.history');
+        
+            });
 
     /*
      * Logout route.

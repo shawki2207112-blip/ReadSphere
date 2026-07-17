@@ -113,7 +113,7 @@
             >
                 Search Books
             </a>
-            {{--
+           
 
             <a
                 class="{{ request()->routeIs('member.borrowings.current') ? 'active' : '' }}"
@@ -130,7 +130,7 @@
             >
                 Borrow History
             </a>
-
+            {{--
             <a
                 class="{{ request()->routeIs('member.profile.*') ? 'active' : '' }}"
                 href="{{ route('member.profile.edit') }}"
