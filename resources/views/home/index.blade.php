@@ -22,8 +22,7 @@
                 </h1>
 
                 <p>
-                    Manage books, members, issue records, returns, borrowing history,
-                    inventory status, and reports from one simple Laravel-based system.
+                    Discover books, explore new ideas, and enjoy a simple, convenient library experience.
                 </p>
 
                 {{-- Registration and login buttons. --}}

@@ -24,9 +24,9 @@
                 </h1>
 
                 <p>
-                    Our Library Management System is designed to make library work easier,
-                    faster, and more organized. It helps administrators manage books,
-                    members, borrowing records, inventory status, and reports from one place.
+                    Our library provides a welcoming space where readers can discover books,
+                     gain knowledge, and explore new ideas. With an organized collection and
+                     convenient services, we make reading and learning easier for everyone.
                 </p>
 
                 {{-- Registration and contact links. --}}
