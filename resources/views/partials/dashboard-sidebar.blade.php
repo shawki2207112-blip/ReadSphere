@@ -130,7 +130,7 @@
             >
                 Borrow History
             </a>
-            {{--
+            
             <a
                 class="{{ request()->routeIs('member.profile.*') ? 'active' : '' }}"
                 href="{{ route('member.profile.edit') }}"
@@ -138,7 +138,7 @@
             >
                 Profile
             </a>
-            --}}
+            
         @endif
     </nav>
 

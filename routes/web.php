@@ -9,6 +9,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Member\BookController as MemberBookController;
 use App\Http\Controllers\Member\BorrowingController as MemberBorrowingController;
+use App\Http\Controllers\Member\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -105,7 +106,10 @@ Route::middleware('auth')->group(function () {
             Route::get('/borrowed-books', [MemberBorrowingController::class, 'current'])->name('borrowings.current');
             //Borrowing History Route
             Route::get('/borrow-history', [MemberBorrowingController::class, 'history'])->name('borrowings.history');
-        
+            //Profile Edit Route
+            Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+            //Profile Update route
+            Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
             });
 
     /*
