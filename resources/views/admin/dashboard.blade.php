@@ -126,7 +126,7 @@
 
                                         <td>
                                             <x-status-badge
-                                                :status="$borrowing->status"
+                                                :status="$borrowing->is_overdue ? 'overdue' : $borrowing->status"
                                             />
                                         </td>
                                     </tr>
