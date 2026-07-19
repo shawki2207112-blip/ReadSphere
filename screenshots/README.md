@@ -1,17 +1,25 @@
-## Screenshots
+# Screenshots
 
-### Admin Dashboard
+## Admin Dashboard
 
-![Admin Dashboard](screenshots/admin-dashboard.png)
+![Admin Dashboard](admin-dashboard.png)
 
-### Book Management
+## Book Management
 
-![Manage Books](screenshots/manage-books.png)
+![Manage Books](manage-books.png)
 
-### Member Book Search
+## Member Book Search
 
-![Member Book Search](screenshots/member-book-search.png)
+![Member Book Search](member-book-search.png)
 
-### Library Reports
+## Borrowing History
 
-![Reports](screenshots/reports.png)
+![Borrowing History](borrowing-history.png)
+
+## Reports
+
+![Reports](reports.png)
+
+## Home Page
+
+![Home Page](home-page.png)
