@@ -1,59 +1,263 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ReadSphere — Library Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+ReadSphere is a web-based library management system developed with **Laravel 12**, **PHP**, and **MySQL**. It provides a simple platform for managing books, categories, members, borrowing records, returns, inventory, overdue books, and library reports.
 
-## About Laravel
+The system supports two user roles: **Admin** and **Member**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Admin Features
 
-## Learning Laravel
+- View library statistics from the dashboard
+- Manage book categories
+- Add, edit, view, search, and delete books
+- Manage library members
+- Issue books to members
+- Process book returns
+- View and filter borrowing history
+- Monitor book inventory and availability
+- Identify overdue borrowing records
+- View simple library reports
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Member Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Register and log in securely
+- Search books by title, author, or ISBN
+- Filter books by category and availability
+- View currently borrowed books
+- View complete borrowing history
+- Identify overdue books
+- Update profile information and password
 
-## Laravel Sponsors
+### API Features
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+ReadSphere provides public JSON endpoints for books and categories:
 
-### Premium Partners
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/books` | Retrieve books |
+| GET | `/api/books/{book}` | Retrieve one book |
+| GET | `/api/categories` | Retrieve categories |
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Book API filters:
 
-## Contributing
+```text
+/api/books?search=Laravel
+/api/books?category_id=1
+/api/books?availability=available
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## Screenshots
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Home Page
 
-## Security Vulnerabilities
+![Home Page](screenshots/home-page.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+### Book Management
+
+![Manage Books](screenshots/manage-books.png)
+
+### Member Book Search
+
+![Member Book Search](screenshots/member-book-search.png)
+
+### Borrowing History
+
+![Borrowing History](screenshots/borrowing-history.png)
+
+### Reports
+
+![Reports](screenshots/reports.png)
+
+---
+
+## Technologies Used
+
+- Laravel 12
+- PHP 8.2
+- MySQL
+- Blade Templates
+- Eloquent ORM
+- HTML5
+- CSS3
+- JavaScript
+- JSON API
+- XAMPP
+
+---
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/shawki2207112-blip/ReadSphere.git
+cd ReadSphere
+```
+
+### 2. Install dependencies
+
+```bash
+composer install
+```
+
+### 3. Create the environment file
+
+For Windows:
+
+```bash
+copy .env.example .env
+```
+
+For macOS or Linux:
+
+```bash
+cp .env.example .env
+```
+
+### 4. Generate the application key
+
+```bash
+php artisan key:generate
+```
+
+### 5. Configure the database
+
+Create a MySQL database named:
+
+```text
+library_management
+```
+
+Update the database section in `.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=library_management
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 6. Run migrations and seeders
+
+```bash
+php artisan migrate --seed
+```
+
+### 7. Clear cached configuration
+
+```bash
+php artisan optimize:clear
+```
+
+### 8. Start the application
+
+```bash
+php artisan serve
+```
+
+Open:
+
+```text
+http://127.0.0.1:8000
+```
+
+Make sure **MySQL is running in XAMPP** before using the application.
+
+---
+
+## Demo Accounts
+
+| Role | Email | Password |
+|---|---|---|
+| Admin | `admin@library.com` | `admin123` |
+| Member | `shawki@gmail.com` | `shawki123` |
+
+> These accounts are intended only for local project demonstration.
+
+---
+
+## Main Project Structure
+
+```text
+app/Http/Controllers/Admin
+app/Http/Controllers/Member
+app/Http/Controllers/Api
+app/Models
+database/migrations
+database/seeders
+resources/views/admin
+resources/views/member
+resources/views/components
+routes/web.php
+routes/api.php
+screenshots
+```
+
+---
+
+## Borrowing Status Logic
+
+Borrowing records use two main database statuses:
+
+- `borrowed`
+- `returned`
+
+A record is displayed as **Overdue** when it is still borrowed and its due date has passed. The overdue condition is calculated dynamically without changing the original database status.
+
+---
+
+## API Testing
+
+Display all API routes:
+
+```bash
+php artisan route:list --path=api
+```
+
+Example endpoint:
+
+```text
+http://127.0.0.1:8000/api/books
+```
+
+A successful request returns JSON similar to:
+
+```json
+{
+    "success": true,
+    "count": 6,
+    "books": []
+}
+```
+
+---
+
+## Security Notes
+
+- The `.env` file should never be uploaded to GitHub.
+- Demo passwords should not be used in a real production system.
+- Set `APP_DEBUG=false` before production deployment.
+- Use strong and unique passwords for real accounts.
+
+---
+
+## Purpose
+
+This project was developed as an academic laboratory project to demonstrate Laravel routing, authentication, role-based access, CRUD operations, database relationships, search and filtering, borrowing management, Blade templates, and JSON APIs.
+
+---
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is created for educational purposes.
